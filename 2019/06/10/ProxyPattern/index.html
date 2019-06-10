@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="理解设计模式（十三）——代理模式"><meta name="keywords" content="设计模式"><meta name="author" content="LeoB_O,undefined"><meta name="copyright" content="LeoB_O"><title>理解设计模式（十三）——代理模式 | ——某菜🐔的博客</title><link rel="shortcut icon" href="/my-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?65eacd17aca8a54ae813b8033a0d0a6e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#提出问题"><span class="toc-text">提出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决问题"><span class="toc-text">解决问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://avatars0.githubusercontent.com/u/26356037?s=460&amp;v=4"></div><div class="author-info__name text-center">LeoB_O</div><div class="author-info__description text-center">自娱自乐hhhhhh</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">23</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">6</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">2</span></a></div></div></div><div id="content-outer"><div class="plain" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">LeoB_O的内心OS</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div></div><div class="layout" id="content-inner"><article id="post"><div class="plain" id="post-title">理解设计模式（十三）——代理模式</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-06-10</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o" aria-hidden="true"></i><a href="/2019/06/10/ProxyPattern/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2019/06/10/ProxyPattern/"></span></a><span class="post-meta__separator">|</span><span class="post-meta-wordcount"><span>Word count: </span><span class="word-count">625</span><span class="post-meta__separator">|</span><span>Reading time: 1 min</span></span></div><div class="article-container" id="post-content"><h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><ul>
+<li><a href="/2019/04/10/FactoryPattern1/" title="理解设计模式（一）——简单工厂">理解设计模式（一）——简单工厂</a>
+</li>
+<li><a href="/2019/04/24/FactoryPattern2/" title="理解设计模式（二）——工厂方法">理解设计模式（二）——工厂方法</a>
+</li>
+<li>
+</li>
+<li><a href="/2019/05/30/BuilderPattern/" title="理解设计模式（四）——建造者">理解设计模式（四）——建造者</a>
+</li>
+<li><a href="/2019/06/03/PrototypePattern/" title="理解设计模式（五）——原型模式">理解设计模式（五）——原型模式</a>
+</li>
+<li><a href="/2019/06/04/SingletonPattern/" title="理解设计模式（六）——单例模式">理解设计模式（六）——单例模式</a>
+</li>
+<li><a href="/2019/06/05/AdapterPattern/" title="理解设计模式（七）——适配器模式">理解设计模式（七）——适配器模式</a>
+</li>
+<li><a href="/2019/06/05/BridgePattern/" title="理解设计模式（八）——桥接模式">理解设计模式（八）——桥接模式</a>
+</li>
+<li><a href="/2019/06/06/CompositePattern/" title="理解设计模式（九）——组合模式">理解设计模式（九）——组合模式</a>
+</li>
+<li><a href="/2019/06/07/DecoratorPattern/" title="理解设计模式（十）——装饰模式">理解设计模式（十）——装饰模式</a>
+</li>
+<li><a href="/2019/06/08/FacadePattern/" title="理解设计模式（十一）——门面模式">理解设计模式（十一）——门面模式</a>
+</li>
+<li><a href="/2019/06/09/FlyweightPattern/" title="理解设计模式（十二）——享元模式">理解设计模式（十二）——享元模式</a>
+</li>
+</ul>
+<h2 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h2><p>如果大家知道怎么科学上网的话，应该就对代理有一定的了解。所谓的代理就是，一件事情，我不亲自去做，因为我亲自做做不了，而是找一个人帮我做，这个人就是我的代理。</p>
+<p>比如说A和C关系不好，A要跟C说一些事情，碍于情面不方便直接说。这时候，A可以委托B作为他的代理，让B去和C说，再把结果告诉A。这就是（正向）代理。</p>
+<p>有正向代理就有反向代理。感兴趣可以自行了解。</p>
+<p>那么，在写代码的过程中，我们为什么需要代理？要调用一个对象直接调用就行了，非得要再通过另一个对象再去调用干嘛？</p>
+<p>其实在项目中，代理模式就像是一个中间层（中间件），在真正处理请求之前，要先做一些预处理。这些预处理可以放在代理对象中进行。</p>
+<p>比如请求数据库之前，要先判断当前用户是否有访问数据库的权限。判断权限的部分就可以交给代理对象处理。</p>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>有了这么一个思想后，写代码其实是很简单直观的。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RealObject</span> </span>&#123;</span><br><span class="line">    request() &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(realObject) &#123;</span><br><span class="line">        <span class="keyword">this</span>.realObject = realObject;</span><br><span class="line">    &#125;</span><br><span class="line">    beforeRequest() &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">    afterRequest() &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">    request() &#123;</span><br><span class="line">        beforeRequest();</span><br><span class="line">        <span class="keyword">this</span>.realObject.request();</span><br><span class="line">        afterRequest();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> real = <span class="keyword">new</span> RealObject();</span><br><span class="line"><span class="keyword">let</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(real);</span><br><span class="line">proxy.request();</span><br></pre></td></tr></table></figure>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>除了解决上面说的权限验证的问题外，代理还有其他的一些用途：</p>
+<ol>
+<li><p>虚拟代理：真实对象响应时间较长，创建一个虚拟代理先响应，等到真实对象响应了再发送真实的响应。</p>
+</li>
+<li><p>缓存代理：将请求缓存下来，之后如果再有请求，就不需要向真实对象请求了，直接从缓存代理中返回结果。不过要注意缓存过期的问题。</p>
+</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">LeoB_O</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://leob-o.github.io/2019/06/10/ProxyPattern/">https://leob-o.github.io/2019/06/10/ProxyPattern/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/设计模式/">设计模式</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/06/09/FlyweightPattern/"><span>理解设计模式（十二）——享元模式</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://leob-o.github.io/2019/06/10/ProxyPattern/';
+  this.page.identifier = '2019/06/10/ProxyPattern/';
+  this.page.title = '理解设计模式（十三）——代理模式';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'leo-14' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-src" src="https://leo-14.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2019 By LeoB_O</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>
